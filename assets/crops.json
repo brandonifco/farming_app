@@ -1,0 +1,110 @@
+[
+    {
+      "name": "Beets",
+      "pivot": "spring",
+      "relativeStart": -32,
+      "relativeEnd": 0,
+      "daysToHarvest": 55,
+      "method": "Direct Sow",
+      "notes": "Sow 1/2 inch deep. Thin to 3 inches apart once they reach 2 inches tall."
+    },
+    {
+      "name": "Carrots",
+      "pivot": "spring",
+      "relativeStart": -39,
+      "relativeEnd": 5,
+      "daysToHarvest": 75,
+      "method": "Direct Sow",
+      "notes": "Requires loose soil. Keep surface moist constantly until germination (14-21 days)."
+    },
+    {
+      "name": "Potatoes",
+      "pivot": "spring",
+      "relativeStart": -46,
+      "relativeEnd": -15,
+      "daysToHarvest": 100,
+      "method": "Direct Sow",
+      "notes": "Plant seed pieces 4 inches deep. Hill soil around stems as they grow."
+    },
+    {
+      "name": "Sugar Snap Peas",
+      "pivot": "spring",
+      "relativeStart": -74,
+      "relativeEnd": -10,
+      "daysToHarvest": 62,
+      "method": "Direct Sow",
+      "notes": "Provide a trellis. They prefer the cool April soil in Tipp City."
+    },
+    {
+      "name": "Broccoli",
+      "pivot": "spring",
+      "relativeStart": -39,
+      "relativeEnd": -15,
+      "daysToHarvest": 70,
+      "method": "Transplant",
+      "notes": "Give them plenty of nitrogen. Watch for cabbage moths as it warms up."
+    },
+    {
+      "name": "Kale",
+      "pivot": "spring",
+      "relativeStart": -46,
+      "relativeEnd": -15,
+      "daysToHarvest": 50,
+      "method": "Direct Sow/Transplant",
+      "notes": "Very hardy. Can handle a light frost if one hits in late April."
+    },
+    {
+      "name": "Onions",
+      "pivot": "spring",
+      "relativeStart": -46,
+      "relativeEnd": -20,
+      "daysToHarvest": 105,
+      "method": "Sets/Transplants",
+      "notes": "Plant sets 1 inch deep. Ensure good drainage to prevent bulb rot."
+    },
+    {
+      "name": "Tomatoes",
+      "pivot": "spring",
+      "relativeStart": 5,
+      "relativeEnd": 36,
+      "daysToHarvest": 80,
+      "method": "Transplant",
+      "notes": "Wait for soil to be consistently 60°F. Provide heavy support."
+    },
+    {
+      "name": "Sweet Corn",
+      "pivot": "spring",
+      "relativeStart": 0,
+      "relativeEnd": 52,
+      "daysToHarvest": 85,
+      "method": "Direct Sow",
+      "notes": "Plant in blocks of at least 4 rows for proper pollination."
+    },
+    {
+      "name": "Peppers",
+      "pivot": "spring",
+      "relativeStart": 10,
+      "relativeEnd": 31,
+      "daysToHarvest": 75,
+      "method": "Transplant",
+      "notes": "They love the heat. Do not rush these into cold April soil."
+    },
+    {
+      "name": "Garlic",
+      "pivot": "fall",
+      "relativeStart": -21,
+      "relativeEnd": 14,
+      "daysToHarvest": 240,
+      "method": "Direct Sow",
+      "notes": "Plant cloves 4 inches deep. Mulch heavily for winter."
+    },
+    {
+      "name": "Fall Kale",
+      "pivot": "fall",
+      "relativeStart": -60,
+      "relativeEnd": -30,
+      "daysToHarvest": 60,
+      "method": "Direct Sow",
+      "notes": "Frost improves the flavor of kale."
+    }
+  ]
