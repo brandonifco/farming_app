@@ -5,6 +5,7 @@ import '../models/crop.dart';
 import 'crop_detail_view.dart';
 import 'full_calendar_view.dart';
 import 'settings_view.dart';
+import 'package:intl/intl.dart';
 
 class PlantingDashboard extends StatefulWidget {
   const PlantingDashboard({super.key});
@@ -20,18 +21,22 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
   
   // Track the zone in the state
   String _currentZone = "6b"; 
+  String _currentLocation = "Loading..."; 
+  String _farmName = "The Farm";      
 
   @override
   void initState() {
     super.initState();
-    _loadInitialConfig();
+    _updateUIFromConfig(); 
   }
 
   // Load the zone on first startup
-  Future<void> _loadInitialConfig() async {
+  Future<void> _updateUIFromConfig() async {
     final config = await _configService.loadConfig();
     setState(() {
       _currentZone = config['hardinessZone'];
+      _currentLocation = config['location'] ?? "Unknown Location";
+      _farmName = config['farmName'] ?? "My Farm";
     });
   }
 
@@ -39,7 +44,7 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('The Farm'),
+        title: Text(_farmName),
         backgroundColor: Colors.green[700],
         foregroundColor: Colors.white,
         actions: [
@@ -51,11 +56,7 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
                 MaterialPageRoute(builder: (context) => const SettingsView()),
               );
               
-              // When we return, re-read the config file and update the UI state
-              final config = await _configService.loadConfig();
-              setState(() {
-                _currentZone = config['hardinessZone'];
-              }); 
+              _updateUIFromConfig();
             },
           ),
           IconButton(
@@ -83,11 +84,11 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'April 15, 2026',
+                      DateFormat('MMMM d, yyyy').format(_today), // Dynamic formatting
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green[900]),
                     ),
                     // Now using the dynamic state variable
-                    Text('Tipp City, Ohio - Zone $_currentZone'), 
+                    Text('$_currentLocation - Zone $_currentZone'), 
                   ],
                 ),
               ],
