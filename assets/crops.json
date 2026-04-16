@@ -106,5 +106,365 @@
       "daysToHarvest": 60,
       "method": "Direct Sow",
       "notes": "Frost improves the flavor of kale."
+    },
+    {
+      "name": "Zucchini",
+      "pivot": "spring",
+      "relativeStart": 14,
+      "relativeEnd": 45,
+      "daysToHarvest": 50,
+      "method": "Direct Sow",
+      "notes": "Fast grower. Watch for squash bugs and provide plenty of space for air circulation."
+    },
+    {
+      "name": "Cucumber",
+      "pivot": "spring",
+      "relativeStart": 14,
+      "relativeEnd": 40,
+      "daysToHarvest": 60,
+      "method": "Direct Sow",
+      "notes": "Trellis for cleaner fruit and better space management on the farm."
+    },
+    {
+      "name": "Green Beans",
+      "pivot": "spring",
+      "relativeStart": 7,
+      "relativeEnd": 60,
+      "daysToHarvest": 55,
+      "method": "Direct Sow",
+      "notes": "Succession plant every 2 weeks for a continuous harvest through summer."
+    },
+    {
+      "name": "Butternut Squash",
+      "pivot": "spring",
+      "relativeStart": 21,
+      "relativeEnd": 35,
+      "daysToHarvest": 110,
+      "method": "Direct Sow",
+      "notes": "Great for storage. Ensure they have a long, warm season to cure properly."
+    },
+    {
+      "name": "Spinach",
+      "pivot": "spring",
+      "relativeStart": -50,
+      "relativeEnd": -15,
+      "daysToHarvest": 45,
+      "method": "Direct Sow",
+      "notes": "Prefers the cold. Will bolt quickly once June heat hits Ohio."
+    },
+    {
+      "name": "Radishes",
+      "pivot": "spring",
+      "relativeStart": -45,
+      "relativeEnd": 15,
+      "daysToHarvest": 25,
+      "method": "Direct Sow",
+      "notes": "The ultimate 'gap filler' crop. Can be interplanted with slower crops like carrots."
+    },
+    {
+      "name": "Swiss Chard",
+      "pivot": "spring",
+      "relativeStart": -14,
+      "relativeEnd": 30,
+      "daysToHarvest": 60,
+      "method": "Direct Sow",
+      "notes": "More heat-tolerant than spinach or kale. Beautiful rainbow stems."
+    },
+    {
+      "name": "Fall Carrots",
+      "pivot": "fall",
+      "relativeStart": -80,
+      "relativeEnd": -60,
+      "daysToHarvest": 75,
+      "method": "Direct Sow",
+      "notes": "Sow in late July/August. Mulch well to keep soil cool during germination."
+    },
+    {
+      "name": "Brussels Sprouts",
+      "pivot": "fall",
+      "relativeStart": -100,
+      "relativeEnd": -80,
+      "daysToHarvest": 90,
+      "method": "Transplant",
+      "notes": "Long season crop. Flavor peaks after the first hard freeze in Tipp City."
+    },
+    {
+      "name": "Sugar Beets",
+      "pivot": "spring",
+      "relativeStart": -20,
+      "relativeEnd": 10,
+      "daysToHarvest": 95,
+      "method": "Direct Sow",
+      "notes": "High calorie yield. Great for livestock fodder or processing if you're experimenting with self-sufficiency."
+    },
+    {
+      "name": "Watermelon",
+      "pivot": "spring",
+      "relativeStart": 21,
+      "relativeEnd": 35,
+      "daysToHarvest": 85,
+      "method": "Direct Sow",
+      "notes": "Needs significant space and heat. Heavy mulch helps retain moisture in sandy-loam soils."
+    },
+    {
+      "name": "Okra",
+      "pivot": "spring",
+      "relativeStart": 14,
+      "relativeEnd": 35,
+      "daysToHarvest": 55,
+      "method": "Direct Sow",
+      "notes": "Extremely heat tolerant. Harvest pods every 2 days once they start producing to keep the plant active."
+    },
+    {
+      "name": "Asparagus",
+      "pivot": "spring",
+      "relativeStart": -30,
+      "relativeEnd": 0,
+      "daysToHarvest": 730,
+      "method": "Crowns",
+      "notes": "Perennial investment. Do not harvest the first year; let the ferns build root energy."
+    },
+    {
+      "name": "Cabbage",
+      "pivot": "spring",
+      "relativeStart": -35,
+      "relativeEnd": -10,
+      "daysToHarvest": 85,
+      "method": "Transplant",
+      "notes": "Heavy feeder. Needs consistent watering to prevent heads from splitting."
+    },
+    {
+      "name": "Eggplant",
+      "pivot": "spring",
+      "relativeStart": 15,
+      "relativeEnd": 35,
+      "daysToHarvest": 75,
+      "method": "Transplant",
+      "notes": "Wait for consistent night temps above 50°F. Watch for flea beetles early on."
+    },
+    {
+      "name": "Sweet Potatoes",
+      "pivot": "spring",
+      "relativeStart": 21,
+      "relativeEnd": 45,
+      "daysToHarvest": 100,
+      "method": "Slips",
+      "notes": "Plant in mounds. Unlike Irish potatoes, these love the peak Ohio summer heat."
+    },
+    {
+      "name": "Pumpkins",
+      "pivot": "spring",
+      "relativeStart": 21,
+      "relativeEnd": 45,
+      "daysToHarvest": 105,
+      "method": "Direct Sow",
+      "notes": "Great for livestock supplement. Requires plenty of room for vines to sprawl."
+    },
+    {
+      "name": "Fall Broccoli",
+      "pivot": "fall",
+      "relativeStart": -85,
+      "relativeEnd": -65,
+      "daysToHarvest": 70,
+      "method": "Transplant",
+      "notes": "Often more successful than spring broccoli in Ohio due to cooling autumn nights."
+    },
+    {
+      "name": "Hairy Vetch",
+      "pivot": "fall",
+      "relativeStart": -30,
+      "relativeEnd": 14,
+      "daysToHarvest": 200,
+      "method": "Direct Sow",
+      "notes": "Cover crop. Nitrogen fixer that protects the soil over winter for the farm's regeneration."
+    },
+    {
+      "name": "Winter Rye",
+      "pivot": "fall",
+      "relativeStart": -14,
+      "relativeEnd": 21,
+      "daysToHarvest": 240,
+      "method": "Direct Sow",
+      "notes": "Hardy cover crop. Prevents erosion and adds significant organic matter when tilled in spring."
+    },
+    {
+      "name": "Blueberries",
+      "pivot": "spring",
+      "relativeStart": -30,
+      "relativeEnd": 0,
+      "daysToHarvest": 1095,
+      "method": "Transplant",
+      "notes": "Requires acidic soil (pH 4.5-5.5). Ideal for permanent beds near the pond area."
+    },
+    {
+      "name": "Lavender",
+      "pivot": "spring",
+      "relativeStart": 7,
+      "relativeEnd": 30,
+      "daysToHarvest": 365,
+      "method": "Transplant",
+      "notes": "Perennial. Needs excellent drainage. Attracts pollinators to the farm's vegetable blocks."
+    },
+    {
+      "name": "Crimson Clover",
+      "pivot": "fall",
+      "relativeStart": -45,
+      "relativeEnd": -15,
+      "daysToHarvest": 180,
+      "method": "Direct Sow",
+      "notes": "Nitrogen-fixing cover crop. Beautiful red blooms in spring before you till it in."
+    },
+    {
+      "name": "Sunflowers",
+      "pivot": "spring",
+      "relativeStart": 14,
+      "relativeEnd": 60,
+      "daysToHarvest": 90,
+      "method": "Direct Sow",
+      "notes": "Tall varieties can act as a natural windbreak or trellis for pole beans."
+    },
+    {
+      "name": "Strawberries",
+      "pivot": "spring",
+      "relativeStart": -20,
+      "relativeEnd": 10,
+      "daysToHarvest": 60,
+      "method": "Transplant",
+      "notes": "June-bearing or everbearing. Great for regenerative ground cover in orchards."
+    },
+    {
+      "name": "Leeks",
+      "pivot": "spring",
+      "relativeStart": -30,
+      "relativeEnd": -10,
+      "daysToHarvest": 120,
+      "method": "Transplant",
+      "notes": "Very cold hardy. Blanch the stems by hilling soil as they grow."
+    },
+    {
+      "name": "Turnips",
+      "pivot": "fall",
+      "relativeStart": -50,
+      "relativeEnd": -30,
+      "daysToHarvest": 50,
+      "method": "Direct Sow",
+      "notes": "Dual-purpose: edible roots for the kitchen and greens for the helper's livestock."
+    },
+    {
+      "name": "Dill",
+      "pivot": "spring",
+      "relativeStart": -7,
+      "relativeEnd": 45,
+      "daysToHarvest": 45,
+      "method": "Direct Sow",
+      "notes": "Self-seeds easily. Essential for pickling the cucumber harvest later."
+    },
+    {
+      "name": "Cantaloupe",
+      "pivot": "spring",
+      "relativeStart": 21,
+      "relativeEnd": 35,
+      "daysToHarvest": 85,
+      "method": "Direct Sow",
+      "notes": "Requires high heat and consistent water. Watch for powdery mildew in late summer."
+    },
+    {
+      "name": "Rhubarb",
+      "pivot": "spring",
+      "relativeStart": -45,
+      "relativeEnd": -15,
+      "daysToHarvest": 365,
+      "method": "Crowns",
+      "notes": "Perennial. Plant once and harvest for 10+ years. Extremely hardy in Ohio winters."
+    },
+    {
+      "name": "Pawpaw",
+      "pivot": "spring",
+      "relativeStart": -14,
+      "relativeEnd": 14,
+      "daysToHarvest": 2190,
+      "method": "Sapling",
+      "notes": "Ohio's state native fruit. Prefers low-light when young; needs a cross-pollinator nearby."
+    },
+    {
+      "name": "Elderberry",
+      "pivot": "spring",
+      "relativeStart": -30,
+      "relativeEnd": 0,
+      "daysToHarvest": 730,
+      "method": "Cuttings/Sapling",
+      "notes": "Native perennial. Great for farm-made syrups. Grows well in the damper areas near your pond."
+    },
+    {
+      "name": "Cauliflower",
+      "pivot": "fall",
+      "relativeStart": -95,
+      "relativeEnd": -75,
+      "daysToHarvest": 80,
+      "method": "Transplant",
+      "notes": "Trickier than broccoli. Needs blanching (tying leaves over the head) to keep the curd white."
+    },
+    {
+      "name": "Arugula",
+      "pivot": "spring",
+      "relativeStart": -45,
+      "relativeEnd": 45,
+      "daysToHarvest": 35,
+      "method": "Direct Sow",
+      "notes": "Fast-growing 'peppery' green. Succession plant every 10 days for a consistent salad mix."
+    },
+    {
+      "name": "Cherry Tomatoes",
+      "pivot": "spring",
+      "relativeStart": 5,
+      "relativeEnd": 36,
+      "daysToHarvest": 65,
+      "method": "Transplant",
+      "notes": "Easier and faster than slicers. High-yield for farm stands; very resistant to early blight."
+    },
+    {
+      "name": "Winter Squash (Delicata)",
+      "pivot": "spring",
+      "relativeStart": 14,
+      "relativeEnd": 45,
+      "daysToHarvest": 100,
+      "method": "Direct Sow",
+      "notes": "Excellent storage life and gourmet flavor. Skin is edible, making it a customer favorite."
+    },
+    {
+      "name": "Raspberries",
+      "pivot": "fall",
+      "relativeStart": -14,
+      "relativeEnd": 14,
+      "daysToHarvest": 365,
+      "method": "Bare Root",
+      "notes": "Perennial bramble. Fall-bearing varieties provide fruit when other berries have finished."
+    },
+    {
+      "name": "Parsnips",
+      "pivot": "spring",
+      "relativeStart": -30,
+      "relativeEnd": 0,
+      "daysToHarvest": 120,
+      "method": "Direct Sow",
+      "notes": "Slow to germinate. Leave in the ground through the first freeze to maximize sweetness."
+    },
+    {
+      "name": "Sorghum",
+      "pivot": "spring",
+      "relativeStart": 21,
+      "relativeEnd": 45,
+      "daysToHarvest": 110,
+      "method": "Direct Sow",
+      "notes": "Highly drought-tolerant. Use for grain, syrup, or as a high-biomass regenerative cover crop."
+    },
+    {
+      "name": "Comfrey",
+      "pivot": "spring",
+      "relativeStart": -14,
+      "relativeEnd": 14,
+      "daysToHarvest": 365,
+      "method": "Root Cutting",
+      "notes": "Dynamic accumulator. Deep roots bring up minerals; use leaves as mulch or livestock 'treats'."
     }
   ]

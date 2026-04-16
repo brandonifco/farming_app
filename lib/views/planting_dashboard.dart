@@ -6,6 +6,7 @@ import 'crop_detail_view.dart';
 import 'full_calendar_view.dart';
 import 'settings_view.dart';
 import 'package:intl/intl.dart';
+import '../services/weather_service.dart';
 
 class PlantingDashboard extends StatefulWidget {
   const PlantingDashboard({super.key});
@@ -17,17 +18,18 @@ class PlantingDashboard extends StatefulWidget {
 class _PlantingDashboardState extends State<PlantingDashboard> {
   final PlantingService _plantingService = PlantingService();
   final ConfigService _configService = ConfigService();
+  final WeatherService _weatherService = WeatherService();
   final DateTime _today = DateTime.now();
-  
+
   // Track the zone in the state
-  String _currentZone = "6b"; 
-  String _currentLocation = "Loading..."; 
-  String _farmName = "The Farm";      
+  String _currentZone = "6b";
+  String _currentLocation = "Loading...";
+  String _farmName = "The Farm";
 
   @override
   void initState() {
     super.initState();
-    _updateUIFromConfig(); 
+    _updateUIFromConfig();
   }
 
   // Load the zone on first startup
@@ -55,7 +57,7 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
                 context,
                 MaterialPageRoute(builder: (context) => const SettingsView()),
               );
-              
+
               _updateUIFromConfig();
             },
           ),
@@ -64,7 +66,9 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const FullCalendarView()),
+                MaterialPageRoute(
+                  builder: (context) => const FullCalendarView(),
+                ),
               );
             },
           ),
@@ -76,22 +80,59 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
           Container(
             padding: const EdgeInsets.all(20),
             color: Colors.green[50],
-            child: Row(
-              children: [
-                const Icon(Icons.wb_sunny, color: Colors.orange, size: 40),
-                const SizedBox(width: 15),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+            child: FutureBuilder<Map<String, dynamic>>(
+              future: _weatherService.getWeatherData(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+
+                final data = snapshot.data ?? {};
+                if (data.isEmpty) return const Text("Weather Unavailable");
+
+                Color riskColor = data['risk'] == "Freeze"
+                    ? Colors.red
+                    : data['risk'] == "High Frost"
+                    ? Colors.orange
+                    : Colors.green;
+
+                return Row(
                   children: [
-                    Text(
-                      DateFormat('MMMM d, yyyy').format(_today), // Dynamic formatting
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green[900]),
+                    Text(data['icon'], style: const TextStyle(fontSize: 40)),
+                    const SizedBox(width: 15),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // --- 1. DATE GOES HERE (Now it can see _today) ---
+                        Text(
+                          DateFormat('MMMM d, yyyy').format(_today),
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.green[900],
+                          ),
+                        ),
+                        // --- 2. WEATHER TEMP/RISK GOES HERE (Now it can see data and riskColor) ---
+                        Text(
+                          '${data['temp']}°F - ${data['risk']} Risk',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: riskColor,
+                          ),
+                        ),
+                        Text(
+                          '${data['summary']} • Wind: ${data['wind']}mph • Rain: ${data['precip']}%',
+                        ),
+                        Text(
+                          '$_currentLocation - Zone $_currentZone',
+                          style: const TextStyle(fontSize: 12),
+                        ),
+                      ],
                     ),
-                    // Now using the dynamic state variable
-                    Text('$_currentLocation - Zone $_currentZone'), 
                   ],
-                ),
-              ],
+                );
+              },
             ),
           ),
           const Padding(
@@ -108,12 +149,14 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(child: CircularProgressIndicator());
                 }
-                
+
                 final crops = snapshot.data ?? [];
 
                 if (crops.isEmpty) {
                   return const Center(
-                    child: Text('Nothing to plant today. Check the full calendar!'),
+                    child: Text(
+                      'Nothing to plant today. Check the full calendar!',
+                    ),
                   );
                 }
 
@@ -122,10 +165,16 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
                   itemBuilder: (context, index) {
                     final crop = crops[index];
                     return Card(
-                      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 8,
+                      ),
                       child: ListTile(
                         leading: const Icon(Icons.grass, color: Colors.green),
-                        title: Text(crop.name, style: const TextStyle(fontWeight: FontWeight.bold)),
+                        title: Text(
+                          crop.name,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
                         subtitle: Text(crop.method),
                         trailing: const Icon(Icons.chevron_right),
                         onTap: () {

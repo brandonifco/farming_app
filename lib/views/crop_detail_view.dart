@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/crop.dart';
+import 'package:intl/intl.dart';
 
 class CropDetailView extends StatelessWidget {
   final Crop crop;
@@ -10,7 +11,7 @@ class CropDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     final String startDate = "${crop.start!.month}/${crop.start!.day}";
     final String endDate = "${crop.end!.month}/${crop.end!.day}";
-    final String harvestDate = "${crop.harvestDate!.month}/${crop.harvestDate!.day}";
+    final String harvestRange = "${DateFormat('MMM d').format(crop.harvestStart!)} - ${DateFormat('MMM d').format(crop.harvestEnd!)}";
 
     return Scaffold(
       appBar: AppBar(
@@ -37,7 +38,7 @@ class CropDetailView extends StatelessWidget {
               child: ListTile(
                 leading: const Icon(Icons.shopping_basket, color: Colors.orange),
                 title: const Text('Estimated Harvest'),
-                subtitle: Text(harvestDate),
+                subtitle: Text(harvestRange),
               ),
             ),
             const SizedBox(height: 10),
