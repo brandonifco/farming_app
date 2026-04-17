@@ -114,7 +114,7 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
                         ),
                         // --- 2. WEATHER TEMP/RISK GOES HERE (Now it can see data and riskColor) ---
                         Text(
-                          '${data['temp']}°F - ${data['risk']} Risk',
+                          'Currently ${data['temp']}°F - ${data['risk']} Risk - High ${data['high']}°F - Low ${data['low']}°F',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
