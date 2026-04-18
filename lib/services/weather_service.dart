@@ -28,6 +28,7 @@ class WeatherService {
         double dewPoint = current['dewPoint'].toDouble();
         double wind = current['windSpeed'].toDouble();
         double precip = current['precipProbability'].toDouble() * 100;
+        double accum = daily['precipAccumulation'].toDouble();
 
         // Pull High/Low from the daily block, not the currently block
         double high = daily['temperatureHigh'].toDouble();
@@ -71,7 +72,8 @@ class WeatherService {
           'high': high.toStringAsFixed(0),
           'low': low.toStringAsFixed(0),
           'highTime': formatUnixTime(highTime),
-          'lowTime': formatUnixTime(lowTime),          
+          'lowTime': formatUnixTime(lowTime),
+          'accum' : accum.toStringAsFixed(2),
           'risk': risk,
           'wind': wind.toStringAsFixed(1),
           'precip': precip.toStringAsFixed(0),

@@ -122,15 +122,26 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
                           ),
                         ),
                         Text(
-                          'High ${data['high']}°F @ ${data['highTime']} - Low ${data['low']}°F @ ${data['lowTime']}',
+                          'High ${data['high']}°F @ ${data['highTime']}',
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: riskColor,
+                          ),
+                        ),
+                        Text(
+                          'Low ${data['low']}°F @ ${data['lowTime']}',
+                          style: TextStyle(
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: riskColor,
                           ),
                         ),
                         Text(
                           '${data['summary']} • Wind: ${data['wind']}mph • Rain: ${data['precip']}%',
+                        ),
+                        Text(
+                          'Accumulation ${data['accum']} in.',
                         ),
                         Text(
                           '$_currentLocation - Zone $_currentZone',
