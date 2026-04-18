@@ -32,7 +32,8 @@ class WeatherService {
         // Pull High/Low from the daily block, not the currently block
         double high = daily['temperatureHigh'].toDouble();
         double low = daily['temperatureLow'].toDouble();
-
+        int highTime = daily['temperatureHighTime'];
+        int lowTime = daily['temperatureLowTime'];
         String summary = current['summary'];
 
         // --- IMPROVED FROST LOGIC ---
@@ -45,11 +46,32 @@ class WeatherService {
         } else if (low <= 40) {
           risk = "Frost Watch";
         }
+        String formatUnixTime(int timestamp) {
+          var date = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
+          
+          // Get hour and minute
+          int hour = date.hour;
+          int minute = date.minute;
+          
+          // Determine AM/PM
+          String period = hour >= 12 ? 'PM' : 'AM';
+          
+          // Convert to 12-hour format
+          hour = hour % 12;
+          if (hour == 0) hour = 12; // Handle Midnight/Noon
+          
+          // Pad minutes (e.g., 6:5 becomes 6:05)
+          String minuteStr = minute < 10 ? '0$minute' : '$minute';
+          
+          return '$hour:$minuteStr$period';
+        }
 
         return {
           'temp': temp.toStringAsFixed(0),
           'high': high.toStringAsFixed(0),
           'low': low.toStringAsFixed(0),
+          'highTime': formatUnixTime(highTime),
+          'lowTime': formatUnixTime(lowTime),          
           'risk': risk,
           'wind': wind.toStringAsFixed(1),
           'precip': precip.toStringAsFixed(0),
