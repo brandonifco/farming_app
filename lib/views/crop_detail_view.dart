@@ -7,6 +7,18 @@ class CropDetailView extends StatelessWidget {
 
   const CropDetailView({super.key, required this.crop});
 
+  // Helper to determine the color of the hardiness badge
+  Color _getHardinessColor(String hardiness) {
+    switch (hardiness.toLowerCase()) {
+      case 'very tender': return Colors.red[700]!;
+      case 'tender': return Colors.orange[700]!;
+      case 'half-hardy': return Colors.blue[600]!;
+      case 'hardy': return Colors.green[700]!;
+      case 'extremely hardy': return Colors.purple[700]!;
+      default: return Colors.grey;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final String startDate = "${crop.start!.month}/${crop.start!.day}";
@@ -19,11 +31,34 @@ class CropDetailView extends StatelessWidget {
         backgroundColor: Colors.green[700],
         foregroundColor: Colors.white,
       ),
-      body: Padding(
+      body: SingleChildScrollView( // Changed to ScrollView to avoid overflow
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // NEW CARD: Frost Resilience & Hardiness
+            Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              child: ListTile(
+                leading: Icon(Icons.ac_unit, color: _getHardinessColor(crop.hardiness)),
+                title: const Text('Frost Resilience', style: TextStyle(fontWeight: FontWeight.bold)),
+                subtitle: Text('${crop.hardiness.toUpperCase()} (Safe to ${crop.criticalTemp}°F)'),
+                trailing: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: _getHardinessColor(crop.hardiness).withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: _getHardinessColor(crop.hardiness)),
+                  ),
+                  child: Text(
+                    crop.hardiness,
+                    style: TextStyle(color: _getHardinessColor(crop.hardiness), fontWeight: FontWeight.bold, fontSize: 12),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
             // CARD 1: Planting Window
             Card(
               child: ListTile(
@@ -33,7 +68,7 @@ class CropDetailView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            // CARD 2: Harvest Projection (The new logic)
+            // CARD 2: Harvest Projection
             Card(
               child: ListTile(
                 leading: const Icon(Icons.shopping_basket, color: Colors.orange),
@@ -72,12 +107,17 @@ class CropDetailView extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(),
+            const SizedBox(height: 20),
             Center(
               child: ElevatedButton.icon(
                 onPressed: () => Navigator.pop(context),
                 icon: const Icon(Icons.arrow_back),
                 label: const Text('Back to Dashboard'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green[700],
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                ),
               ),
             ),
           ],

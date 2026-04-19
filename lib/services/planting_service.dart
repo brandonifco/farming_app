@@ -1,12 +1,12 @@
 import 'config_service.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // Added for persistence
 import '../models/crop.dart';
 
 class PlantingService {
-  // New helper to fetch the specific frost dates from your config
+  // Helper to fetch the specific frost dates from your config
   Future<Map<String, DateTime>> _getFrostDates() async {
-    // Switch from rootBundle to our new ConfigService
     final config = await ConfigService().loadConfig();
 
     return {
@@ -23,10 +23,18 @@ class PlantingService {
     final String response = await rootBundle.loadString('assets/crops.json');
     final List<dynamic> data = json.decode(response);
 
-    // 3. Map to objects and calculate their specific dates
+    // 3. Get the persistent selections from disk
+    final prefs = await SharedPreferences.getInstance();
+    final List<String> selectedNames = prefs.getStringList('selected_crops') ?? [];
+
+    // 4. Map to objects, calculate dates, and set selection state
     return data.map((json) {
       final crop = Crop.fromJson(json);
       crop.calculateDates(frostDates['spring']!, frostDates['fall']!);
+      
+      // Set the selection state based on what's saved in preferences
+      crop.isSelected = selectedNames.contains(crop.name);
+      
       return crop;
     }).toList();
   }
@@ -37,9 +45,12 @@ class PlantingService {
       if (crop.start == null || crop.end == null) return false;
 
       // Check if current date falls within the calculated window
-      return (date.isAfter(crop.start!) ||
+      bool isWindowActive = (date.isAfter(crop.start!) ||
               date.isAtSameMomentAs(crop.start!)) &&
           (date.isBefore(crop.end!) || date.isAtSameMomentAs(crop.end!));
+      
+      // ONLY return crops that are in the window AND selected by the user
+      return isWindowActive && crop.isSelected;
     }).toList();
   }
 

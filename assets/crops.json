@@ -2,6 +2,8 @@
     {
       "name": "Beets",
       "pivot": "spring",
+      "hardiness": "Semi",
+      "criticalTemp": "29",
       "relativeStart": -32,
       "relativeEnd": 0,
       "daysToHarvest": 55,
@@ -11,6 +13,8 @@
     {
       "name": "Carrots",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "24",
       "relativeStart": -39,
       "relativeEnd": 5,
       "daysToHarvest": 75,
@@ -20,6 +24,8 @@
     {
       "name": "Potatoes",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "30",
       "relativeStart": -46,
       "relativeEnd": -15,
       "daysToHarvest": 100,
@@ -29,6 +35,8 @@
     {
       "name": "Sugar Snap Peas",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "28",      
       "relativeStart": -74,
       "relativeEnd": -10,
       "daysToHarvest": 62,
@@ -38,6 +46,8 @@
     {
       "name": "Broccoli",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "26",      
       "relativeStart": -39,
       "relativeEnd": -15,
       "daysToHarvest": 70,
@@ -47,6 +57,8 @@
     {
       "name": "Kale",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "10",      
       "relativeStart": -46,
       "relativeEnd": -15,
       "daysToHarvest": 50,
@@ -56,6 +68,8 @@
     {
       "name": "Onions",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "25",      
       "relativeStart": -46,
       "relativeEnd": -20,
       "daysToHarvest": 105,
@@ -65,6 +79,8 @@
     {
       "name": "Tomatoes",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",      
       "relativeStart": 5,
       "relativeEnd": 36,
       "daysToHarvest": 80,
@@ -74,6 +90,8 @@
     {
       "name": "Sweet Corn",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",      
       "relativeStart": 0,
       "relativeEnd": 52,
       "daysToHarvest": 85,
@@ -83,6 +101,8 @@
     {
       "name": "Peppers",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",      
       "relativeStart": 10,
       "relativeEnd": 31,
       "daysToHarvest": 75,
@@ -92,6 +112,8 @@
     {
       "name": "Garlic",
       "pivot": "fall",
+      "hardiness": "Hardy",
+      "criticalTemp": "-10",      
       "relativeStart": -21,
       "relativeEnd": 14,
       "daysToHarvest": 240,
@@ -101,6 +123,8 @@
     {
       "name": "Fall Kale",
       "pivot": "fall",
+      "hardiness": "Hardy",
+      "criticalTemp": "10",      
       "relativeStart": -60,
       "relativeEnd": -30,
       "daysToHarvest": 60,
@@ -110,6 +134,8 @@
     {
       "name": "Zucchini",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",          
       "relativeStart": 14,
       "relativeEnd": 45,
       "daysToHarvest": 50,
@@ -119,6 +145,8 @@
     {
       "name": "Cucumber",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",          
       "relativeStart": 14,
       "relativeEnd": 40,
       "daysToHarvest": 60,
@@ -128,6 +156,8 @@
     {
       "name": "Green Beans",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",          
       "relativeStart": 7,
       "relativeEnd": 60,
       "daysToHarvest": 55,
@@ -137,6 +167,8 @@
     {
       "name": "Butternut Squash",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",          
       "relativeStart": 21,
       "relativeEnd": 35,
       "daysToHarvest": 110,
@@ -146,6 +178,8 @@
     {
       "name": "Spinach",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "20",          
       "relativeStart": -50,
       "relativeEnd": -15,
       "daysToHarvest": 45,
@@ -155,6 +189,8 @@
     {
       "name": "Radishes",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "26",          
       "relativeStart": -45,
       "relativeEnd": 15,
       "daysToHarvest": 25,
@@ -164,6 +200,8 @@
     {
       "name": "Swiss Chard",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "25",          
       "relativeStart": -14,
       "relativeEnd": 30,
       "daysToHarvest": 60,
@@ -173,6 +211,8 @@
     {
       "name": "Fall Carrots",
       "pivot": "fall",
+      "hardiness": "Hardy",
+      "criticalTemp": "24",          
       "relativeStart": -80,
       "relativeEnd": -60,
       "daysToHarvest": 75,
@@ -182,6 +222,8 @@
     {
       "name": "Brussels Sprouts",
       "pivot": "fall",
+            "hardiness": "Hardy",
+      "criticalTemp": "20",    
       "relativeStart": -100,
       "relativeEnd": -80,
       "daysToHarvest": 90,
@@ -191,6 +233,8 @@
     {
       "name": "Sugar Beets",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "26",          
       "relativeStart": -20,
       "relativeEnd": 10,
       "daysToHarvest": 95,
@@ -200,6 +244,8 @@
     {
       "name": "Watermelon",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",          
       "relativeStart": 21,
       "relativeEnd": 35,
       "daysToHarvest": 85,
@@ -209,6 +255,8 @@
     {
       "name": "Okra",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",          
       "relativeStart": 14,
       "relativeEnd": 35,
       "daysToHarvest": 55,
@@ -218,6 +266,8 @@
     {
       "name": "Asparagus",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "25",          
       "relativeStart": -30,
       "relativeEnd": 0,
       "daysToHarvest": 730,
@@ -227,6 +277,8 @@
     {
       "name": "Cabbage",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "25",          
       "relativeStart": -35,
       "relativeEnd": -10,
       "daysToHarvest": 85,
@@ -236,6 +288,8 @@
     {
       "name": "Eggplant",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",          
       "relativeStart": 15,
       "relativeEnd": 35,
       "daysToHarvest": 75,
@@ -245,6 +299,8 @@
     {
       "name": "Sweet Potatoes",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",          
       "relativeStart": 21,
       "relativeEnd": 45,
       "daysToHarvest": 100,
@@ -254,6 +310,8 @@
     {
       "name": "Pumpkins",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",          
       "relativeStart": 21,
       "relativeEnd": 45,
       "daysToHarvest": 105,
@@ -263,6 +321,8 @@
     {
       "name": "Fall Broccoli",
       "pivot": "fall",
+      "hardiness": "Tender",
+      "criticalTemp": "32",          
       "relativeStart": -85,
       "relativeEnd": -65,
       "daysToHarvest": 70,
@@ -272,6 +332,8 @@
     {
       "name": "Hairy Vetch",
       "pivot": "fall",
+      "hardiness": "Hardy",
+      "criticalTemp": "-15",    
       "relativeStart": -30,
       "relativeEnd": 14,
       "daysToHarvest": 200,
@@ -281,6 +343,8 @@
     {
       "name": "Winter Rye",
       "pivot": "fall",
+      "hardiness": "Hardy",
+      "criticalTemp": "-40",         
       "relativeStart": -14,
       "relativeEnd": 21,
       "daysToHarvest": 240,
@@ -290,6 +354,8 @@
     {
       "name": "Blueberries",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "-20",         
       "relativeStart": -30,
       "relativeEnd": 0,
       "daysToHarvest": 1095,
@@ -299,6 +365,8 @@
     {
       "name": "Lavender",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "15",         
       "relativeStart": 7,
       "relativeEnd": 30,
       "daysToHarvest": 365,
@@ -308,6 +376,8 @@
     {
       "name": "Crimson Clover",
       "pivot": "fall",
+      "hardiness": "Hardy",
+      "criticalTemp": "0",         
       "relativeStart": -45,
       "relativeEnd": -15,
       "daysToHarvest": 180,
@@ -317,6 +387,8 @@
     {
       "name": "Sunflowers",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "28",         
       "relativeStart": 14,
       "relativeEnd": 60,
       "daysToHarvest": 90,
@@ -326,6 +398,8 @@
     {
       "name": "Strawberries",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "10",         
       "relativeStart": -20,
       "relativeEnd": 10,
       "daysToHarvest": 60,
@@ -335,6 +409,8 @@
     {
       "name": "Leeks",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "15",         
       "relativeStart": -30,
       "relativeEnd": -10,
       "daysToHarvest": 120,
@@ -344,6 +420,8 @@
     {
       "name": "Turnips",
       "pivot": "fall",
+      "hardiness": "Hardy",
+      "criticalTemp": "20",         
       "relativeStart": -50,
       "relativeEnd": -30,
       "daysToHarvest": 50,
@@ -353,6 +431,8 @@
     {
       "name": "Dill",
       "pivot": "spring",
+      "hardiness": "Semi",
+      "criticalTemp": "25",         
       "relativeStart": -7,
       "relativeEnd": 45,
       "daysToHarvest": 45,
@@ -362,6 +442,8 @@
     {
       "name": "Cantaloupe",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",         
       "relativeStart": 21,
       "relativeEnd": 35,
       "daysToHarvest": 85,
@@ -371,6 +453,8 @@
     {
       "name": "Rhubarb",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "25",         
       "relativeStart": -45,
       "relativeEnd": -15,
       "daysToHarvest": 365,
@@ -380,6 +464,8 @@
     {
       "name": "Pawpaw",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "-15",         
       "relativeStart": -14,
       "relativeEnd": 14,
       "daysToHarvest": 2190,
@@ -389,6 +475,8 @@
     {
       "name": "Elderberry",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "-20",         
       "relativeStart": -30,
       "relativeEnd": 0,
       "daysToHarvest": 730,
@@ -398,6 +486,8 @@
     {
       "name": "Cauliflower",
       "pivot": "fall",
+      "hardiness": "Hardy",
+      "criticalTemp": "26",         
       "relativeStart": -95,
       "relativeEnd": -75,
       "daysToHarvest": 80,
@@ -407,6 +497,8 @@
     {
       "name": "Arugula",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "18",         
       "relativeStart": -45,
       "relativeEnd": 45,
       "daysToHarvest": 35,
@@ -416,6 +508,8 @@
     {
       "name": "Cherry Tomatoes",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "-32",         
       "relativeStart": 5,
       "relativeEnd": 36,
       "daysToHarvest": 65,
@@ -425,6 +519,8 @@
     {
       "name": "Winter Squash (Delicata)",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",         
       "relativeStart": 14,
       "relativeEnd": 45,
       "daysToHarvest": 100,
@@ -434,6 +530,8 @@
     {
       "name": "Raspberries",
       "pivot": "fall",
+      "hardiness": "Hardy",
+      "criticalTemp": "-20",         
       "relativeStart": -14,
       "relativeEnd": 14,
       "daysToHarvest": 365,
@@ -443,6 +541,8 @@
     {
       "name": "Parsnips",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "20",         
       "relativeStart": -30,
       "relativeEnd": 0,
       "daysToHarvest": 120,
@@ -452,6 +552,8 @@
     {
       "name": "Sorghum",
       "pivot": "spring",
+      "hardiness": "Tender",
+      "criticalTemp": "32",         
       "relativeStart": 21,
       "relativeEnd": 45,
       "daysToHarvest": 110,
@@ -461,6 +563,8 @@
     {
       "name": "Comfrey",
       "pivot": "spring",
+      "hardiness": "Hardy",
+      "criticalTemp": "-40",         
       "relativeStart": -14,
       "relativeEnd": 14,
       "daysToHarvest": 365,

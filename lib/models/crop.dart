@@ -1,11 +1,14 @@
 class Crop {
   final String name;
+  final String hardiness; // Add this
+  final int criticalTemp;      // Add this
   final String pivot; // 'spring' or 'fall'
   final int relativeStart; // days relative to pivot
   final int relativeEnd; // days relative to pivot
   final int daysToHarvest; // New Field
   final String method;
   final String notes;
+  bool isSelected = false; // Add this line
 
   // These will be calculated on the fly
   DateTime? start;
@@ -15,6 +18,8 @@ class Crop {
 
   Crop({
     required this.name,
+    required this.hardiness,
+    required this.criticalTemp,
     required this.pivot,
     required this.relativeStart,
     required this.relativeEnd,
@@ -26,7 +31,10 @@ class Crop {
   factory Crop.fromJson(Map<String, dynamic> json) {
     return Crop(
       name: json['name'],
-      pivot: json['pivot'],
+      hardiness: json['hardiness'] ?? 'Unknown',
+      criticalTemp: json['criticalTemp'] is int 
+        ? json['criticalTemp'] 
+        : int.tryParse(json['criticalTemp'].toString()) ?? 32,      pivot: json['pivot'],
       relativeStart: json['relativeStart'],
       relativeEnd: json['relativeEnd'],
       daysToHarvest: json['daysToHarvest'],

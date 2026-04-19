@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/planting_service.dart';
-import '../services/config_service.dart'; // New Import
+import '../services/config_service.dart';
 import '../models/crop.dart';
 import 'crop_detail_view.dart';
 import 'full_calendar_view.dart';
@@ -21,7 +21,6 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
   final WeatherService _weatherService = WeatherService();
   final DateTime _today = DateTime.now();
 
-  // Track the zone in the state
   String _currentZone = "6b";
   String _currentLocation = "Loading...";
   String _farmName = "The Farm";
@@ -32,7 +31,6 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
     _updateUIFromConfig();
   }
 
-  // Load the zone on first startup
   Future<void> _updateUIFromConfig() async {
     final config = await _configService.loadConfig();
     setState(() {
@@ -50,26 +48,42 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
         backgroundColor: Colors.green[700],
         foregroundColor: Colors.white,
         actions: [
+          // REFRESH BUTTON: Forces FutureBuilders to rebuild
           IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () async {
-              await Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SettingsView()),
-              );
-
-              _updateUIFromConfig();
+            icon: const Icon(Icons.refresh),
+            tooltip: 'Refresh Data',
+            onPressed: () {
+              setState(() {
+                // Re-trigger the UI update from config and 
+                // refresh the Weather/Planting FutureBuilders
+                _updateUIFromConfig();
+              });
             },
           ),
           IconButton(
             icon: const Icon(Icons.calendar_month),
-            onPressed: () {
-              Navigator.push(
+            tooltip: 'Full Calendar',
+            onPressed: () async {
+              // Using 'await' ensures that if the user changes selections,
+              // we refresh the dashboard when they return.
+              await Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const FullCalendarView(),
                 ),
               );
+              setState(() {}); // Refresh list after returning from calendar
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: 'Settings',
+            onPressed: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsView()),
+              );
+              _updateUIFromConfig();
             },
           ),
         ],
@@ -81,6 +95,7 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
             padding: const EdgeInsets.all(20),
             color: Colors.green[50],
             child: FutureBuilder<Map<String, dynamic>>(
+              // The refresh button re-triggers this call
               future: _weatherService.getWeatherData(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -103,7 +118,6 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // --- 1. DATE GOES HERE (Now it can see _today) ---
                         Text(
                           DateFormat('MMMM d, yyyy').format(_today),
                           style: TextStyle(
@@ -112,7 +126,6 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
                             color: Colors.green[900],
                           ),
                         ),
-                        // --- 2. WEATHER TEMP/RISK GOES HERE (Now it can see data and riskColor) ---
                         Text(
                           'Currently ${data['temp']}°F - ${data['risk']} Risk',
                           style: TextStyle(
@@ -163,6 +176,7 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
           ),
           Expanded(
             child: FutureBuilder<List<Crop>>(
+              // The refresh button re-triggers this filtered search
               future: _plantingService.getCropsToPlant(_today),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -173,8 +187,12 @@ class _PlantingDashboardState extends State<PlantingDashboard> {
 
                 if (crops.isEmpty) {
                   return const Center(
-                    child: Text(
-                      'Nothing to plant today. Check the full calendar!',
+                    child: Padding(
+                      padding: EdgeInsets.all(20.0),
+                      child: Text(
+                        'Nothing to plant today. Check the full calendar and make sure you have crops selected!',
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   );
                 }
